@@ -15,9 +15,6 @@ public class LinguisticAnalysis {
             pipeline.loadDefaultProperties();
             pipeline.load();
             String text = "I topi non avevano nipoti.";
-            // Get the original Annotation (Stanford CoreNLP)
-            //Annotation stanfordAnnotation = pipeline.runRaw(text);
-            //System.out.println("*** " + stanfordAnnotation.toString());
             InputStream stream = new ByteArrayInputStream(text.getBytes("UTF-8"));
             Annotation annotation = pipeline.run(stream, System.out, TintRunner.OutputFormat.JSON);
         } catch (IOException e) {
